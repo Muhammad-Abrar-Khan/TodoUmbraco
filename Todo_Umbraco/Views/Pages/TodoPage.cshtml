@@ -1,0 +1,25 @@
+﻿@using Todo.Common.Helpers
+@using Serilog
+@model Todo.Common.Models.CMS.TodoPage
+
+<label @Constants.cms_page_name="@Model.ContentType.Alias"></label>
+@{
+    Layout = "~/Views/_Layout.cshtml";
+    using (new FunctionTracer(true))
+    {
+        @if (Model.ComponentPicker != null && Model.ComponentPicker.Any())
+        {
+            foreach (IPublishedContent component in Model.ComponentPicker)
+            {
+                try
+                {
+                    @await Component.InvokeAsync(component.ContentType.Alias, component)
+                }
+                catch (Exception ex)
+                {
+                    Log.Logger.Error(ex, ex.Message);
+                }
+            }
+        }
+    }
+}

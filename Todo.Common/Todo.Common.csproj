@@ -1,0 +1,39 @@
+﻿
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework> <!-- Ensure this matches your .NET version -->
+  </PropertyGroup>
+
+<ItemGroup>
+  <!-- For general helpers -->
+  <PackageReference Include="Microsoft.AspNetCore.App" />
+  <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0" />
+
+  <!-- For Code Analysis -->
+  <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
+
+  <!-- For Identity Management -->
+  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.0.0" />
+  <PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="7.0.0" />
+
+  <!-- For Logging -->
+  <PackageReference Include="Serilog" Version="3.0.0" />
+  <PackageReference Include="Serilog.Extensions.Logging" Version="7.0.0" />
+  <PackageReference Include="Serilog.Settings.Configuration" Version="7.0.0" />
+  <PackageReference Include="Serilog.Sinks.Console" Version="3.1.0" />
+
+  <!-- For Umbraco -->
+  <PackageReference Include="Umbraco.Cms.Core" Version="12.0.0" />
+  <PackageReference Include="Umbraco.Cms.Web.Common" Version="12.0.0" />
+
+  <!-- For Lucene -->
+  <PackageReference Include="Lucene.Net" Version="4.8.0-beta00016" />
+</ItemGroup>
+
+<ItemGroup>
+  <Folder Include="Models\Components\" />
+</ItemGroup>
+
+</Project>
